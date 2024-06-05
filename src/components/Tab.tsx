@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Tab({ isActive, title, onShow, id }) {
 
   return (

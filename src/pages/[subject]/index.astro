@@ -18,8 +18,6 @@ export async function getStaticPaths() {
 
 const { allNotes, allTrials, subject } = Astro.props;
 
-console.log(allTrials);
-
 const filteredNotes = filterBySubject(allNotes, subject);
 const filteredTrials = filterBySubject(allTrials, subject);
 
