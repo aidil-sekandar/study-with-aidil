@@ -1,15 +1,30 @@
+---
+const subjectList = [
+  { name: "🦖 Sejarah", url: "sejarah" },
+  { name: "🧮 Add Math", url: "addmath" },
+  { name: "⚛️ Fizik", url: "fizik" },
+  { name: "🧪 Kimia", url: "kimia" },
+  { name: "🧬 Biologi", url: "biologi" },
+];
+---
+
 <aside class="h-max grid gap-4 border-[1px] border-[#2C3233] pb-4 rounded-sm">
   <div class="grid">
     <div class="bg-emerald-200/15 pl-4 py-1 rounded-sm mb-3">
       <h3 class="font-bold">📚 Subjects</h3>
     </div>
-    <ul class="grid">
-      <li>
-        <a class="hover:bg-gray-600/30 block py-1 pl-4" href="/sejarah/">🦖 Sejarah</a>
-      </li>
-      <li>
-        <a class="hover:bg-gray-600/30 block py-1 pl-4" href="/addmath/">🧮 Add Math</a>
-      </li>
+    <ul class="grid gap-2">
+      {
+        subjectList.map((subject) => {
+          return (
+            <li>
+              <a class="hover:bg-gray-600/30 block py-1 pl-4" href={`/${subject.url}/`}>
+                {subject.name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
   <div class="grid">

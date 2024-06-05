@@ -3,6 +3,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import SideNav from "@/components/SideNav.astro";
 import "@/styles/global.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const { headTitle } = Astro.props;
 ---
@@ -55,5 +56,6 @@ const { headTitle } = Astro.props;
       <slot />
     </section>
     <Footer />
+    <ScrollToTop client:load />
   </body>
 </html>

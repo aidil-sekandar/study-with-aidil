@@ -2,19 +2,29 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { subjectURL } from "@/lib/utils/basicUtils";
 import { getCollection } from "astro:content";
+import "@/styles/content.css";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
-  return allNotes.map(({ data }) => {
+  return allNotes.map((note) => {
     return {
-      params: { subject: subjectURL(data.subject), slug: `/notes/${data.url}` },
-      props: { note: data },
+      params: { subject: subjectURL(note.data.subject), slug: `/notes/${note.data.url}` },
+      props: { note, subject: note.data.subject },
     };
   });
 }
 
-const { note } = Astro.props;
-const headTitle = note.title;
+const { note, subject } = Astro.props;
+const { Content } = await note.render();
+const headTitle = note.data.title;
 ---
 
-<BaseLayout headTitle={headTitle} />
+<BaseLayout headTitle={headTitle}>
+  <h1 slot="pageTitle" class="font-bold text-4xl mb-3">{subject}</h1>
+  <main class="md:col-span-2 mt-5 md:mt-0">
+    <h1 class="font-bold text-4xl mb-4">{note.data.title}</h1>
+    <div class="content">
+      <Content />
+    </div>
+  </main>
+</BaseLayout>

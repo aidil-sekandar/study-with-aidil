@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./nota-kinestetik_C6QvzmKM.mjs');
+						return import('./nota-kinestetik_DJ_lMEKB.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

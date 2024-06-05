@@ -1,0 +1,7 @@
+.content {
+  @apply grid gap-4;
+}
+
+.content > p {
+  @apply text-textContent text-lg;
+}
