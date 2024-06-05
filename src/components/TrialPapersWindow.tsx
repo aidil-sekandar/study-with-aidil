@@ -1,9 +1,15 @@
 import TrialPapersCard from "./TrialPapersCard";
 
-export default function TrialPapersWindow() {
+export default function TrialPapersWindow({ allTrials }) {
   return (
     <div className="grid gap-4">
-      <TrialPapersCard />
+      {
+        allTrials.map(({ data }) => {
+          return (
+            <TrialPapersCard data={data} />
+          )
+        })
+      }
     </div>
   )
-}
+}  

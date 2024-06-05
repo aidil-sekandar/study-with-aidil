@@ -45,9 +45,9 @@ const { headTitle } = Astro.props;
   <body class="bg-bodyColor text-white font-PlusJakartaSans">
     <Header />
     <section class="main-layout mt-16 mb-10">
-      <h1 class="font-bold text-4xl mb-3">Study With Aidil</h1>
+      <slot name="pageTitle" />
       <div class="border-l-2 border-gray-500 pl-4">
-        <p class="text-textSecondary">Welcome to my academic vault</p>
+        <p slot="pageSubtitle" class="text-textSecondary">Welcome to Aidil's academic vault</p>
       </div>
     </section>
     <section class="main-layout grid md:grid-cols-3 gap-6 mb-16">

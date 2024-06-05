@@ -34,7 +34,7 @@
 }
 
 .main-layout {
-  @apply max-w-[65rem] px-6 mx-auto;
+  @apply max-w-[75rem] px-6 mx-auto;
 }
 
 .hero {

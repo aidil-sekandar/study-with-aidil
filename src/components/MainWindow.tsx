@@ -3,7 +3,7 @@ import NotesWindow from "./NotesWindow";
 import Tab from "./Tab";
 import TrialPapersWindow from "./TrialPapersWindow";
 
-export default function MainWindow() {
+export default function MainWindow({ allNotes, allTrials }) {
   const [showTab, setTab] = useState("notes");
 
   function handleTabChange(e) {
@@ -28,8 +28,8 @@ export default function MainWindow() {
           />
         </div>
         <main className="border-[1px] border-[#2C3233] py-6 px-4 rounded-b-sm">
-          {showTab == "notes" && <NotesWindow />}
-          {showTab == "trial" && <TrialPapersWindow />}
+          {showTab == "notes" && <NotesWindow allNotes={allNotes} />}
+          {showTab == "trial" && <TrialPapersWindow allTrials={allTrials} />}
         </main>
       </div>
     </>
