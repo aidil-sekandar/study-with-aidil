@@ -1,57 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MainWindow from "@/components/MainWindow";
+
+const headTitle = "Home";
 ---
 
-<BaseLayout>
-  <section class="main-layout mt-16 mb-10">
-    <h1 class="font-bold text-4xl mb-3">Study With Aidil</h1>
-    <div class="border-l-2 border-gray-500 pl-4">
-      <p class="text-textSecondary">Welcome to my note vault</p>
-    </div>
-  </section>
-  <section class="main-layout grid md:grid-cols-3 gap-6 mb-16">
-    <aside class="grid gap-4">
-      <div class="grid">
-        <div class="bg-emerald-200/15 pl-2 py-1 rounded-sm mb-3">
-          <h3>📚 Subjects</h3>
-        </div>
-        <ul class="grid">
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🦖 Sejarah</a>
-          </li>
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🧮 Matematik</a>
-          </li>
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🧬 Biologi</a>
-          </li>
-        </ul>
-      </div>
-      <div class="grid">
-        <div class="bg-purple-400/15 pl-2 py-1 rounded-sm mb-3">
-          <h3>🔗 Useful Links</h3>
-        </div>
-        <ul class="grid">
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🦖 Sejarah</a>
-          </li>
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🧮 Matematik</a>
-          </li>
-          <li>
-            <a class="hover:bg-gray-600/30 block py-1 pl-2 rounded-sm" href="/">🧬 Biologi</a>
-          </li>
-        </ul>
-      </div>
-    </aside>
-    <main class="md:col-span-2">
-      <h1>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptas dolor blanditiis
-        laborum nemo rerum beatae ab, quasi enim sequi similique, optio id voluptate odio illum,
-        animi at dignissimos ex totam magnam? Voluptatem molestias molestiae nostrum quasi
-        distinctio eius. Magnam fugiat quam nemo labore sapiente voluptatem eaque! Vitae, quasi
-        adipisci!
-      </h1>
-    </main>
-  </section>
+<BaseLayout headTitle={headTitle}>
+  <MainWindow client:load />
 </BaseLayout>
