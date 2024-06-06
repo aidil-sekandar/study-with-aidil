@@ -10,7 +10,6 @@ export default function NotesWindow({ allNotes }) {
               slug={note.data.url}
               title={note.data.title}
               subject={note.data.subject}
-              description={note.data.description}
               img={note.data.img}
             />
           )

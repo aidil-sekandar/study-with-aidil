@@ -2,14 +2,23 @@ import TrialPapersCard from "./TrialPapersCard";
 
 export default function TrialPapersWindow({ allTrials }) {
   return (
-    <div className="grid gap-4">
+    <>
       {
-        allTrials.map(({ data }) => {
-          return (
-            <TrialPapersCard data={data} />
-          )
-        })
+        allTrials.length > 1 && (
+          <div className="grid gap-4">
+            {
+              allTrials.map(({ data }) => {
+                return (
+                  <TrialPapersCard data={data} />
+                )
+              })
+            }
+          </div>
+        )
       }
-    </div>
+      {
+        allTrials.length == 0 && <h1>Seems like nothing is here :(</h1>
+      }
+    </>
   )
 }  

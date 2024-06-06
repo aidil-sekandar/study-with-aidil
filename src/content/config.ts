@@ -4,7 +4,6 @@ const notes = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string(),
     subject: z.string(),
     img: z.string(),
     url: z.string(),
