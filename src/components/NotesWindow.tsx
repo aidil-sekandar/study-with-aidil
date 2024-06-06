@@ -2,7 +2,7 @@ import NotesCard from "./NotesCard";
 
 export default function NotesWindow({ allNotes }) {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid md:grid-cols-2 gap-4">
       {
         allNotes.map(note => {
           return (

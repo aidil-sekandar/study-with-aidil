@@ -11,7 +11,7 @@ export default function NotesCard({ slug, title, subject, img }) {
         <img loading="lazy" src={img} alt="Note's Featured" />
       </div>
       <div className="p-4">
-        <h2 className="text-2xl font-bold">{title}</h2>
+        <h2 className="text-lg font-bold">{title}</h2>
       </div>
     </a>
   )

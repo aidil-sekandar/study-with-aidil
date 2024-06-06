@@ -11,8 +11,21 @@ const { headTitle } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <!-- meta  -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="author" content="Aidil Iskandar" />
+    <meta name="description" content="Aidil Iskandar's academic vault" />
+    <meta name="keywords" content="Study With Aidil" />
+    <!-- og: -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Study With Aidil" />
+    <meta property="og:description" content="Aidil Iskandar's academic vault" />
+    <!-- icon  -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -39,8 +52,6 @@ const { headTitle } = Astro.props;
       href="https://raw.githubusercontent.com/aidil-sekandar/study-with-aidil/master/public/favicon/safari-pinned-tab.svg"
       color="#5bbad5"
     />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="generator" content={Astro.generator} />
     <title>{headTitle} | Study With Aidil</title>
   </head>
   <body class="bg-bodyColor text-white font-PlusJakartaSans">
@@ -48,7 +59,7 @@ const { headTitle } = Astro.props;
     <section class="main-layout mt-16 mb-10">
       <slot name="pageTitle" />
       <div class="border-l-2 border-gray-500 pl-4">
-        <p slot="pageSubtitle" class="text-textSecondary">Welcome to Aidil's academic vault</p>
+        <p slot="pageSubtitle" class="text-textSecondary">Welcome to Aidil's academic vault.</p>
       </div>
     </section>
     <section class="main-layout grid md:grid-cols-3 gap-6 mb-16">
