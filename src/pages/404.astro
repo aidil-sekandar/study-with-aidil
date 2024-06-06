@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Image from "astro/components/Image.astro";
 const headTitle = "404: Not Found";
 ---
 
 <BaseLayout headTitle={headTitle}>
   <h1 slot="pageTitle" class="font-bold text-4xl mb-3">Study With Aidil</h1>
   <div class="md:col-span-2 text-center">
-    <img width="300" class="mx-auto mb-6" src="/images/404.svg" alt="404" />
+    <Image src="/images/404.svg" width="300" height="400" class="mx-auto mb-6" alt="404" />
     <h2 class="text-5xl font-bold mb-3 text-[#EC775C]">404</h2>
     <p class="text-xl">Oops! Seems like the page couldn't be find.</p>
   </div>

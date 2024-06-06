@@ -5,3 +5,7 @@
 .content > p {
   @apply text-textContent text-lg;
 }
+
+.open-note {
+  @apply bg-[#202020] flex p-4 rounded-sm border-l-4 border-[#FF5731] hover:underline;
+}

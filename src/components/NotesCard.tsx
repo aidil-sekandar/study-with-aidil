@@ -8,7 +8,7 @@ export default function NotesCard({ slug, title, subject, description, img }) {
       >{subject}</span
       >
       <div className="h-[158px] overflow-hidden rounded-t-sm">
-        <img loading="lazy" src={img} alt="Note's Featured Image" />
+        <img loading="lazy" src={img} alt="Note's Featured" height="150" />
       </div>
       <div className="p-4">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
