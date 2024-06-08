@@ -1,4 +1,4 @@
-export default function TrialPapersCard({ data }) {
+export default function ExercisesCard({ data }) {
   return (
     <a target="_blank" href={data.url} className="bg-[#262626] rounded-sm hover:bg-[#202020] py-4 px-6">
       <h2 className="text-2xl font-bold mb-3 flex gap-2 items-center">

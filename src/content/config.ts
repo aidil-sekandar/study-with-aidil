@@ -10,7 +10,7 @@ const notes = defineCollection({
   }),
 });
 
-const trials = defineCollection({
+const exercises = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
@@ -21,5 +21,5 @@ const trials = defineCollection({
 
 export const collections = {
   notes,
-  trials,
+  exercises,
 };

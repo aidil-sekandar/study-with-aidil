@@ -4,12 +4,12 @@ import MainWindow from "@/components/MainWindow";
 import { getCollection } from "astro:content";
 
 const allNotes = await getCollection("notes");
-const allTrials = await getCollection("trials");
+const allExercises = await getCollection("exercises");
 
 const headTitle = "Home";
 ---
 
 <BaseLayout headTitle={headTitle}>
   <h1 slot="pageTitle" class="font-bold text-4xl mb-3">Study With Aidil</h1>
-  <MainWindow client:load allNotes={allNotes} allTrials={allTrials} />
+  <MainWindow client:load allNotes={allNotes} allExercises={allExercises} />
 </BaseLayout>
