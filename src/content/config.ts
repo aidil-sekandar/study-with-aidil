@@ -10,16 +10,16 @@ const notes = defineCollection({
   }),
 });
 
-const exercises = defineCollection({
-  type: "data",
-  schema: z.object({
-    name: z.string(),
-    url: z.string(),
-    subject: z.string(),
-  }),
-});
+// const exercises = defineCollection({
+//   type: "data",
+//   schema: z.object({
+//     name: z.string(),
+//     url: z.string(),
+//     subject: z.string(),
+//   }),
+// });
 
 export const collections = {
   notes,
-  exercises,
+  // exercises
 };

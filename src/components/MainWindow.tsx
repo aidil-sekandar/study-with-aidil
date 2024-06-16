@@ -1,9 +1,9 @@
 import { useState } from "react";
 import NotesWindow from "./NotesWindow";
 import Tab from "./Tab";
-import ExercisesWindow from "./ExercisesWindow";
+// import ExercisesWindow from "./ExercisesWindow";
 
-export default function MainWindow({ allNotes, allExercises }) {
+export default function MainWindow({ allNotes }) {
   const [showTab, setTab] = useState("notes");
 
   function handleTabChange(e) {
@@ -19,16 +19,16 @@ export default function MainWindow({ allNotes, allExercises }) {
           onShow={handleTabChange}
           id="notes"
         />
-        <Tab
+        {/* <Tab
           isActive={showTab == "exercises" ? true : false}
           title="📄 Exercises"
           onShow={handleTabChange}
           id="exercises"
-        />
+        /> */}
       </div>
       <main className="border-[1px] border-[#2C3233] py-6 px-4 rounded-b-sm">
         {showTab == "notes" && <NotesWindow allNotes={allNotes} />}
-        {showTab == "exercises" && <ExercisesWindow allExercises={allExercises} />}
+        {/* {showTab == "exercises" && <ExercisesWindow allExercises={allExercises} />} */}
       </main>
     </div>
   )

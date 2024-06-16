@@ -7,24 +7,24 @@ import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
-  const allExercises = await getCollection("exercises");
+  // const allExercises = await getCollection("exercises");
   return allNotes.map((note) => {
     return {
       params: { subject: subjectURL(note.data.subject) },
-      props: { allNotes, allExercises, subject: note.data.subject },
+      props: { allNotes,  subject: note.data.subject },
     };
   });
 }
 
-const { allNotes, allExercises, subject } = Astro.props;
+const { allNotes, subject } = Astro.props;
 
 const filteredNotes = filterBySubject(allNotes, subject);
-const filteredExercises = filterBySubject(allExercises, subject);
+// const filteredExercises = filterBySubject(allExercises, subject);
 
 const headTitle = subject;
 ---
 
 <BaseLayout headTitle={headTitle}>
   <h1 slot="pageTitle" class="font-bold text-4xl mb-3">{subject}</h1>
-  <MainWindow client:load allNotes={filteredNotes} allExercises={filteredExercises} />
+  <MainWindow client:load allNotes={filteredNotes} />
 </BaseLayout>
