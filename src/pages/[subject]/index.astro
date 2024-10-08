@@ -1,5 +1,5 @@
 ---
-import { subjectURL, filterBySubject } from "@/lib/utils/basicUtils";
+import { filterBySubject } from "@/lib/utils/basicUtils";
 
 import MainWindow from "@/components/MainWindow";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -7,20 +7,16 @@ import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
-  // const allExercises = await getCollection("exercises");
   return allNotes.map((note) => {
     return {
-      params: { subject: subjectURL(note.data.subject) },
-      props: { allNotes,  subject: note.data.subject },
+      params: { subject: note.data.subjectURL },
+      props: { allNotes, subject: note.data.subject },
     };
   });
 }
 
 const { allNotes, subject } = Astro.props;
-
 const filteredNotes = filterBySubject(allNotes, subject);
-// const filteredExercises = filterBySubject(allExercises, subject);
-
 const headTitle = subject;
 ---
 

@@ -1,5 +1,4 @@
 export default function Tab({ isActive, title, onShow, id }) {
-
   return (
     <>
       {

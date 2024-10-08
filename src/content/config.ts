@@ -7,19 +7,10 @@ const notes = defineCollection({
     subject: z.string(),
     img: z.string(),
     url: z.string(),
+    subjectURL: z.string(),
   }),
 });
 
-// const exercises = defineCollection({
-//   type: "data",
-//   schema: z.object({
-//     name: z.string(),
-//     url: z.string(),
-//     subject: z.string(),
-//   }),
-// });
-
 export const collections = {
   notes,
-  // exercises
 };

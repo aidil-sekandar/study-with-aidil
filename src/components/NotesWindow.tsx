@@ -7,6 +7,8 @@ export default function NotesWindow({ allNotes }) {
         allNotes.map(note => {
           return (
             <NotesCard
+              key={note.data.url}
+              subjectURL={note.data.subjectURL}
               slug={note.data.url}
               title={note.data.title}
               subject={note.data.subject}

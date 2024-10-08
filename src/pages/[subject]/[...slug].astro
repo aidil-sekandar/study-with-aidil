@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { subjectURL } from "@/lib/utils/basicUtils";
 import { getCollection } from "astro:content";
 import "@/styles/content.css";
 
@@ -8,7 +7,7 @@ export async function getStaticPaths() {
   const allNotes = await getCollection("notes");
   return allNotes.map((note) => {
     return {
-      params: { subject: subjectURL(note.data.subject), slug: `/notes/${note.data.url}` },
+      params: { subject: note.data.subjectURL, slug: note.data.url },
       props: { note, subject: note.data.subject },
     };
   });
