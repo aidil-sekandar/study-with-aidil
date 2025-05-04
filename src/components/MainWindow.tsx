@@ -14,7 +14,7 @@ export default function MainWindow({ allNotes }) {
       <div className="flex gap-3 font-semibold">
         <Tab
           isActive={showTab == "notes" ? true : false}
-          title="✏️ Recent"
+          title="📝 My Notes and Exercises"
           onShow={handleTabChange}
           id="notes"
         />
